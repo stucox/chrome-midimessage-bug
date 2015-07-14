@@ -1,0 +1,11 @@
+<h1>Control case</h1>
+<p>Open the JS console, trigger events from your MIDI device and watch the JS console. You’ll see events being logged.</p>
+<script>
+navigator.requestMIDIAccess().then(function (access) {
+	access.inputs.forEach(function (input) {
+		input.onmidimessage = function (evt) {
+			console.log(evt);
+		};
+	});
+});
+</script>
