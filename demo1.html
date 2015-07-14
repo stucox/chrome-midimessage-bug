@@ -1,5 +1,20 @@
-<h1>Failing case</h1>
-<p>Open the JS console, trigger events from your MIDI device and watch the JS console. Nothing happens.</p>
+<!doctype html>
+<html lang="en-GB">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+
+<main>
+	<h1>Failing case</h1>
+	<p>Chrome 43.0 has a bug where the <code>midimessage</code> event in the Web Audio API can’t be listened for using <code>addEventListener()</code>.
+	<p>Open the JS console, trigger events from your MIDI device and watch the JS console. Nothing happens.</p>
+	<p>See <a href="demo2.html">the control case</a> which sets an <code>onmidimessage</code> function instead, which works.</p>
+</main>
 <script>
 navigator.requestMIDIAccess().then(function (access) {
 	access.inputs.forEach(function (input) {
@@ -9,3 +24,6 @@ navigator.requestMIDIAccess().then(function (access) {
 	});
 });
 </script>
+
+	</body>
+</html>
